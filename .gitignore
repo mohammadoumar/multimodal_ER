@@ -178,3 +178,4 @@ cython_debug/
 **/xls
 **/data_files
 **/model_outputs
+**/datasets
