@@ -179,3 +179,4 @@ cython_debug/
 **/data_files
 **/model_outputs
 **/datasets
+/LLaMA-Factory
