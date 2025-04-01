@@ -180,4 +180,7 @@ cython_debug/
 **/model_outputs
 **/datasets
 **/LLaMA-Factory
+/LLaMA-Factory
 **/json_datasets
+**/lfc_log_dir
+**/lfc_model_args
