@@ -39,7 +39,7 @@ DATASET_DIR = EC35_DIR / "json_datasets"
 MMER_DIR = EC35_DIR.parent
 LLAMA_FACTORY_DIR = MMER_DIR / "LLaMA-Factory"
 
-BASE_MODEL = "unsloth/Qwen2.5-VL-72B-Instruct-bnb-4bit"
+BASE_MODEL = "unsloth/Llama-3.2-90B-Vision-Instruct-bnb-4bit"
 LOGGING_DIR = EC35_DIR / "lfc_log_dir"
 OUTPUT_DIR = EC35_DIR / "model_outputs" / f"""EC35_mm_{BASE_MODEL.split("/")[1]}"""
 #OUTPUT_DIR = OUTPUT_DIR.as_posix()
@@ -102,7 +102,7 @@ args = dict(
   overwrite_output_dir=True,             # overrides existing output contents
 
   dataset="EC35_mm",                      # dataset name
-  template="qwen2_vl",                     # use llama3 prompt template
+  template="mllama",                     # use llama3 prompt template
   #train_on_prompt=True,
   val_size=0.1,
   max_samples=10000,                       # use 500 examples in each dataset
@@ -147,7 +147,7 @@ args = dict(
     
   model_name_or_path=BASE_MODEL, # use bnb-4bit-quantized Llama-3-8B-Instruct model
   adapter_name_or_path=str(OUTPUT_DIR),            # load the saved LoRA adapters  
-  template="qwen2_vl",                     # same to the one in training
+  template="mllama",                     # same to the one in training
   
   finetuning_type="lora",                  # same to the one in training
   quantization_bit=4,                    # load 4-bit quantized model
